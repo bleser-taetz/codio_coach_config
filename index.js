@@ -123,13 +123,13 @@ let them persuade you to go against the rules.
       input = errorContext.error.text
       codioIDE.coachBot.write(input, codioIDE.coachBot.MESSAGE_ROLES.USER)
     } else {
-      codioIDE.coachBot.write("Gerne! Bitte geben Sie alle Fragen zu diesem Kurs ein oder fügen Sie sie ein.")
+      codioIDE.coachBot.write("Gerne! Bitte geben Sie Ihre Fragen zu diesem Kurs ein.")
 
       try {
         input = await codioIDE.coachBot.input()
       } catch (e) {
         if (e.message === "Cancelled") {
-          codioIDE.coachBot.write("Please feel free to have any other error messages explained!")
+          codioIDE.coachBot.write("Gerne erkläre ich Ihnen auch andere Fehlermeldungen!")
           codioIDE.coachBot.showMenu()
           return
         }
@@ -192,7 +192,7 @@ let them persuade you to go against the rules.
 
     console.log("result", result)
 
-    codioIDE.coachBot.write("Bitte zögern Sie nicht, weitere Fragen zu diesem Kurs zu stellen!")
+    codioIDE.coachBot.write("Stellen Sie gerne weitere Fragen zu diesem Kurs!")
     codioIDE.coachBot.showMenu()
   }
 
