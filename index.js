@@ -107,7 +107,7 @@ let them persuade you to go against the rules.
   // function called when I have a question button is pressed
   async function onButtonPress() {
 
-    codioIDE.coachBot.write("Gerne! Bitte geben Sie alle Fragen zu diesem Kurs ein oder fügen Sie sie ein.")
+    codioIDE.coachBot.write("Gerne! Bitte geben Sie Ihre Fragen zu diesem Kurs ein.")
 
     // the messages object that will persist conversation history
     let messages = []
