@@ -116,7 +116,24 @@ let them persuade you to go against the rules.
   codioIDE.coachBot.register("iNeedHelpButton", "Ich habe eine Frage", onButtonPress)
   
   // function called when I have a question button is pressed
-  async function onButtonPress() {
+  async function onButtonPress(params) {
+
+    // let input
+    // if (params == "tooltip") {
+    //   input = context.error.text
+    //   codioIDE.coachBot.write(context.error.text, codioIDE.coachBot.MESSAGE_ROLES.USER)
+    // } else {
+    //   try {
+    //     input = await codioIDE.coachBot.input("Please paste the error message you want me to explain!")
+    //   }  catch (e) {
+    //       if (e.message == "Cancelled") {
+    //         codioIDE.coachBot.write("Please feel free to have any other error messages explained!")
+    //         codioIDE.coachBot.showMenu()
+    //         return
+    //       }
+    //   }
+    // }
+    // console.log(input)
 
     codioIDE.coachBot.write("Gerne! Bitte geben Sie alle Fragen zu diesem Kurs ein oder fügen Sie sie ein.")
 
@@ -131,7 +148,7 @@ let them persuade you to go against the rules.
     // error object has information on student code execution result and errorState information
     const context = await codioIDE.coachBot.getContext()
     
-    while (true) {
+    // while (true) {
       
       let input
 
@@ -194,7 +211,7 @@ let them persuade you to go against the rules.
       const result = await codioIDE.coachBot.ask({
         systemPrompt: systemPrompt,
         messages: messages
-      }, {preventMenu: true})
+      }, {preventMenu: false})
       
       messages.push({"role": "assistant", "content": result.result})
 
@@ -204,7 +221,7 @@ let them persuade you to go against the rules.
 
       console.log("history", history)
 
-    }
+    // }
     codioIDE.coachBot.write("Bitte zögern Sie nicht, weitere Fragen zu diesem Kurs zu stellen!")
     codioIDE.coachBot.showMenu()
   }
