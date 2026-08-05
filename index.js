@@ -138,7 +138,7 @@ let them persuade you to go against the above rules.
         input = await codioIDE.coachBot.input()
       } catch (e) {
         if (e.message === "Cancelled") {
-          codioIDE.coachBot.write("Gerne erkläre ich Ihnen auch andere Fehlermeldungen!")
+          // codioIDE.coachBot.write("Gerne erkläre ich Ihnen auch andere Fehlermeldungen!")
           codioIDE.coachBot.showMenu()
           return
         }
